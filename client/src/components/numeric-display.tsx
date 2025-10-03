@@ -9,6 +9,7 @@ interface NumericDisplayProps {
   unit?: string;
   trend?: "up" | "down" | "neutral";
   sparklineData?: number[];
+  color?: string;
   onRemove?: () => void;
 }
 
@@ -18,6 +19,7 @@ export default function NumericDisplay({
   unit = "",
   trend = "neutral",
   sparklineData = [],
+  color = "hsl(var(--chart-1))",
   onRemove,
 }: NumericDisplayProps) {
   const formattedSparkline = sparklineData.map((val, idx) => ({ value: val, index: idx }));
@@ -63,7 +65,7 @@ export default function NumericDisplay({
                 <Line
                   type="monotone"
                   dataKey="value"
-                  stroke="hsl(var(--chart-1))"
+                  stroke={color}
                   strokeWidth={1.5}
                   dot={false}
                 />

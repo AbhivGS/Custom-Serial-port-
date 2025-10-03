@@ -87,6 +87,7 @@ export default function GraphCard({
                 stroke={color}
                 strokeWidth={2}
                 dot={false}
+                name={title}
               />
             </LineChart>
           </ResponsiveContainer>

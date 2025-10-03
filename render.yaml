@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: serialsensei
+    env: node
+    nodeVersion: 20
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm run start"
+    autoDeploy: true
